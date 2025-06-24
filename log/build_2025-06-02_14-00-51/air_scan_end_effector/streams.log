@@ -1,0 +1,28 @@
+[1.733s] Invoking command in '/home/spencer/arg/build/air_scan_end_effector': PYTHONPATH=/home/spencer/arg/build/air_scan_end_effector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spencer/arg/install/air_scan_end_effector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/spencer/arg/build/air_scan_end_effector/build --no-deps symlink_data
+[2.433s] running develop
+[2.858s] running egg_info
+[2.859s] creating air_scan_end_effector.egg-info
+[2.860s] writing air_scan_end_effector.egg-info/PKG-INFO
+[2.863s] writing dependency_links to air_scan_end_effector.egg-info/dependency_links.txt
+[2.864s] writing entry points to air_scan_end_effector.egg-info/entry_points.txt
+[2.865s] writing requirements to air_scan_end_effector.egg-info/requires.txt
+[2.866s] writing top-level names to air_scan_end_effector.egg-info/top_level.txt
+[2.867s] writing manifest file 'air_scan_end_effector.egg-info/SOURCES.txt'
+[2.875s] reading manifest file 'air_scan_end_effector.egg-info/SOURCES.txt'
+[2.877s] writing manifest file 'air_scan_end_effector.egg-info/SOURCES.txt'
+[2.884s] running build_ext
+[2.885s] Creating /home/spencer/arg/install/air_scan_end_effector/lib/python3.10/site-packages/air-scan-end-effector.egg-link (link to .)
+[2.888s] Installing air_scan_driver script to /home/spencer/arg/install/air_scan_end_effector/lib/air_scan_end_effector
+[2.890s] 
+[2.891s] Installed /home/spencer/arg/build/air_scan_end_effector
+[2.891s] running symlink_data
+[2.891s] creating /home/spencer/arg/install/air_scan_end_effector/share/ament_index
+[2.893s] creating /home/spencer/arg/install/air_scan_end_effector/share/ament_index/resource_index
+[2.893s] creating /home/spencer/arg/install/air_scan_end_effector/share/ament_index/resource_index/packages
+[2.893s] symbolically linking /home/spencer/arg/build/air_scan_end_effector/resource/air_scan_end_effector -> /home/spencer/arg/install/air_scan_end_effector/share/ament_index/resource_index/packages
+[2.893s] symbolically linking /home/spencer/arg/build/air_scan_end_effector/package.xml -> /home/spencer/arg/install/air_scan_end_effector/share/air_scan_end_effector
+[2.893s] creating /home/spencer/arg/install/air_scan_end_effector/share/air_scan_end_effector/launch
+[2.894s] symbolically linking /home/spencer/arg/build/air_scan_end_effector/launch/air_scan_end_effector.launch.py -> /home/spencer/arg/install/air_scan_end_effector/share/air_scan_end_effector/launch
+[2.894s] creating /home/spencer/arg/install/air_scan_end_effector/share/air_scan_end_effector/config
+[2.894s] symbolically linking /home/spencer/arg/build/air_scan_end_effector/config/params.yaml -> /home/spencer/arg/install/air_scan_end_effector/share/air_scan_end_effector/config
+[3.084s] Invoked command in '/home/spencer/arg/build/air_scan_end_effector' returned '0': PYTHONPATH=/home/spencer/arg/build/air_scan_end_effector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spencer/arg/install/air_scan_end_effector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/spencer/arg/build/air_scan_end_effector/build --no-deps symlink_data
