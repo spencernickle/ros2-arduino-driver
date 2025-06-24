@@ -1,5 +1,0 @@
-air_scan_driver:
-  ros__parameters:
-    use_sim_time: false
-    baud_rate: 115200
-    
