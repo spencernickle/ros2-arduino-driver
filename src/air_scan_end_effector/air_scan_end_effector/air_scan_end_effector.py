@@ -26,7 +26,7 @@ class AirScanEndEffector(Node):
 		self.declare_parameters(
 			namespace="",
 			parameters=[
-				("baud_rate", 9600),
+				("baud_rate", 115200),
                 ("serial_port", "/dev/ttyACM0"),
                 ("timeout", 1.0)
 			]
@@ -44,6 +44,7 @@ class AirScanEndEffector(Node):
             self.command_callback,
             10
         )
+		self.position_publisher = self.create_publisher(String, 'stepper_position', 10)
         
 		self.get_logger().info("Node is ready.")
 		time.sleep(1)
@@ -53,7 +54,25 @@ class AirScanEndEffector(Node):
 		parts = command_data.split(maxsplit=1)
 		command = parts[0]
 		value = parts[1] if len(parts) > 1 else ""
-		self.serial_handler.write(command, value)
+		if command == "readPOS":
+			target_prefix = f"MOTOR {value.strip()} POSITION"
+			max_attempts = 10
+			found_line = None
+
+			for _ in range(max_attempts):
+				line = self.serial_handler.arduino.readline().decode().strip()
+				if line.startswith(target_prefix):
+					found_line = line
+					break
+
+			if found_line:
+				self.get_logger().info(f"{found_line}")
+				msg = String()
+				msg.data = found_line
+				self.position_publisher.publish(msg)
+		else:
+			self.serial_handler.write(command, value)
+		
 
 def main(args=None):
 	rclpy.init(args=args)

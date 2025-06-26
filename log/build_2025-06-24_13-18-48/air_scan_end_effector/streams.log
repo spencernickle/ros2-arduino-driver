@@ -1,0 +1,22 @@
+[1.554s] Invoking command in '/home/spencer/arg/src/air_scan_end_effector': PYTHONPATH=/home/spencer/arg/build/air_scan_end_effector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spencer/arg/install/air_scan_end_effector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/air_scan_end_effector build --build-base /home/spencer/arg/build/air_scan_end_effector/build install --record /home/spencer/arg/build/air_scan_end_effector/install.log --single-version-externally-managed install_data
+[2.136s] running egg_info
+[2.138s] writing ../../build/air_scan_end_effector/air_scan_end_effector.egg-info/PKG-INFO
+[2.139s] writing dependency_links to ../../build/air_scan_end_effector/air_scan_end_effector.egg-info/dependency_links.txt
+[2.140s] writing entry points to ../../build/air_scan_end_effector/air_scan_end_effector.egg-info/entry_points.txt
+[2.140s] writing requirements to ../../build/air_scan_end_effector/air_scan_end_effector.egg-info/requires.txt
+[2.140s] writing top-level names to ../../build/air_scan_end_effector/air_scan_end_effector.egg-info/top_level.txt
+[2.145s] reading manifest file '../../build/air_scan_end_effector/air_scan_end_effector.egg-info/SOURCES.txt'
+[2.150s] writing manifest file '../../build/air_scan_end_effector/air_scan_end_effector.egg-info/SOURCES.txt'
+[2.151s] running build
+[2.151s] running build_py
+[2.152s] running install
+[2.152s] running install_lib
+[2.155s] running install_data
+[2.155s] running install_egg_info
+[2.164s] removing '/home/spencer/arg/install/air_scan_end_effector/lib/python3.10/site-packages/air_scan_end_effector-0.0.0-py3.10.egg-info' (and everything under it)
+[2.165s] Copying ../../build/air_scan_end_effector/air_scan_end_effector.egg-info to /home/spencer/arg/install/air_scan_end_effector/lib/python3.10/site-packages/air_scan_end_effector-0.0.0-py3.10.egg-info
+[2.168s] running install_scripts
+[2.218s] Installing air_scan_driver script to /home/spencer/arg/install/air_scan_end_effector/lib/air_scan_end_effector
+[2.219s] Installing test_commands script to /home/spencer/arg/install/air_scan_end_effector/lib/air_scan_end_effector
+[2.220s] writing list of installed files to '/home/spencer/arg/build/air_scan_end_effector/install.log'
+[2.326s] Invoked command in '/home/spencer/arg/src/air_scan_end_effector' returned '0': PYTHONPATH=/home/spencer/arg/build/air_scan_end_effector/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/spencer/arg/install/air_scan_end_effector/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/air_scan_end_effector build --build-base /home/spencer/arg/build/air_scan_end_effector/build install --record /home/spencer/arg/build/air_scan_end_effector/install.log --single-version-externally-managed install_data

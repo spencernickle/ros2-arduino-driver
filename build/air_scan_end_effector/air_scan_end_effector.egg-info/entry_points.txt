@@ -1,0 +1,4 @@
+[console_scripts]
+air_scan_driver = air_scan_end_effector.air_scan_end_effector:main
+test_commands = air_scan_end_effector.test_commands:main
+
