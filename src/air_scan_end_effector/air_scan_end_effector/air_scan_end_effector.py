@@ -9,6 +9,7 @@ class SerialHandler:
         self.port = port
         self.baud = baud
         self.timeout = timeout
+		
         self.connect()
 
     def connect(self):
@@ -19,6 +20,17 @@ class SerialHandler:
         print(cmd)
         self.arduino.write(cmd.encode())
 
+    def read(self):
+        if self.arduino.in_waiting > 0:
+            line = self.arduino.readline().decode().strip()
+            if line:
+                print(f"{line}")
+                return line
+        return None
+
+
+			
+
 class AirScanEndEffector(Node):
 	def __init__(self):
 		super().__init__('air_scan_driver')
@@ -26,7 +38,7 @@ class AirScanEndEffector(Node):
 		self.declare_parameters(
 			namespace="",
 			parameters=[
-				("baud_rate", 115200),
+				("baud_rate", 9600),
                 ("serial_port", "/dev/ttyACM0"),
                 ("timeout", 1.0)
 			]
@@ -44,7 +56,9 @@ class AirScanEndEffector(Node):
             self.command_callback,
             10
         )
-		self.position_publisher = self.create_publisher(String, 'stepper_position', 10)
+		self.serial_reading = self.create_publisher(String, 'serial_reading', 10)
+            
+		self.timer = self.create_timer(0.5, self.read_from_serial)
         
 		self.get_logger().info("Node is ready.")
 		time.sleep(1)
@@ -54,9 +68,10 @@ class AirScanEndEffector(Node):
 		parts = command_data.split(maxsplit=1)
 		command = parts[0]
 		value = parts[1] if len(parts) > 1 else ""
+		'''
 		if command == "readPOS":
 			target_prefix = f"MOTOR {value.strip()} POSITION"
-			max_attempts = 10
+			max_attempts = 25
 			found_line = None
 
 			for _ in range(max_attempts):
@@ -70,10 +85,18 @@ class AirScanEndEffector(Node):
 				msg = String()
 				msg.data = found_line
 				self.position_publisher.publish(msg)
-		else:
-			self.serial_handler.write(command, value)
+        '''
 		
-
+		self.serial_handler.write(command, value)
+		
+	def read_from_serial(self):
+		line = self.serial_handler.read()
+		if line:
+			msg = String()
+			msg.data = line
+			self.get_logger().info(f"{line}")
+			self.serial_reading.publish(msg)
+                  
 def main(args=None):
 	rclpy.init(args=args)
 
